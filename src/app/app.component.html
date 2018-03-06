@@ -1,8 +1,40 @@
-<h1>Disciplinas</h1>
-<hr>
-<ul>
-  <li *ngFor="let disciplina of disciplinas" (click)="selecionar(disciplina)">
-      <p [class.selecionado]="selecionado == disciplina">{{disciplina.nome}}</p>
-      <p *ngIf="selecionado == disciplina">{{disciplina.descricao}}</p>
-  </li>
-</ul>
+<!-- centralizando inicio -->
+<table width="100%"><tr><td></td><td width="80%">
+<!-- centralizando fim -->
+            <fieldset>
+                <h1>Disciplinas</h1>
+                <table border="1" width="100%">
+                    <thead>
+                    <tr>
+                        <th>CODIGO</th>
+                        <th>NOME</th>
+                        <th>DETALHES</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let disciplina of disciplinas">
+                        <td>{{disciplina.codigo}}</td>
+                        <td>{{disciplina.nome}}</td>
+                        <td><button (click)="selecionar(disciplina)">Detalhes</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+                <ul>
+                    <li *ngFor="let disciplina of disciplinas" type="none">
+                        <p [class.selecionado]="selecionado == disciplina">
+                        <p *ngIf="selecionado == disciplina">
+                            <b>Codigo:</b> {{disciplina.codigo}};<br>
+                            <b>Professor:</b>{{disciplina.professor.nome}};<br>
+                            <b>Nome:</b> {{disciplina.nome}};<br>
+                            <b>Descricao</b> {{disciplina.descricao}};<br>
+                        </p>
+                    </li>
+                </ul>
+                    <!-- centralizando inicio -->
+                    <!-- centralizando inicio -->
+            </fieldset>
+<!-- centralizando inicio -->
+</td><td></td></tr></table>
+<!-- centralizando fim -->
